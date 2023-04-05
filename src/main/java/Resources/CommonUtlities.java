@@ -1,5 +1,7 @@
 package Resources;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
@@ -41,6 +43,16 @@ public class CommonUtlities {
 		String sub1 = subtotal.replace("Rs.", "").trim();
 		Double sub2 = Double.parseDouble(sub1);
 		return sub2;
+	}
+	
+	public void seats(List<WebElement> selection, String seat1, String seat2) {
+		List<WebElement> sit = selection;
+
+		for(WebElement seat:sit) {
+		if(seat.getText().equals(seat1) || seat.getText().equals(seat2)) {
+		seat.click();
+		}
+		}
 	}
 	
 }

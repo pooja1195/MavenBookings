@@ -54,13 +54,7 @@ public class BusBooking extends BaseClass{
 		
 		pom.proceed().click();
 		
-		List<WebElement> sit = pom.selection();
-
-		for(WebElement seat:sit) {
-		if(seat.getText().equals(Constant.seat1) || seat.getText().equals(Constant.seat2)) {
-		seat.click();
-		}
-		}
+		cou.seats(pom.selection(), Constant.seat1, Constant.seat2);
 		
 		int actualprice = cou.cuprice(pom.price());
 		int Expectedprice = Constant.expprice;
