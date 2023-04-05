@@ -22,10 +22,10 @@ public class BaseClass {
 		String browsername = prop.getProperty("browser");
 		
 		if(browsername.equalsIgnoreCase("chrome")) {
-			ChromeOptions option = new ChromeOptions();
-			option.addArguments("--remote-allow-origins=*");
+//			ChromeOptions option = new ChromeOptions();
+//			option.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().setup();
-			Driver = new ChromeDriver(option);
+			Driver = new ChromeDriver();
 		}
 		else if(browsername.equalsIgnoreCase("edge")){
 			System.out.println("no browser is available");
